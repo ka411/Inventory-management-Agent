@@ -1,0 +1,250 @@
+{
+  "name": "My First agent",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Hi there,\nHow can I help you?",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -560,
+        -40
+      ],
+      "id": "1616c538-35d4-4377-94c8-67d41b09fb6a",
+      "name": "When chat message received",
+      "webhookId": "da3a4849-0234-4ba3-8902-113bd172699d",
+      "notes": "How can I help you?"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -248,
+        -40
+      ],
+      "id": "5c739ad5-5991-47cc-88ff-4cd1aa7f06dc",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -340,
+        180
+      ],
+      "id": "1193d09f-1655-4673-a45c-3ca01e2581f8",
+      "name": "OpenAI Chat Model",
+      "notesInFlow": false,
+      "credentials": {
+        "openAiApi": {
+          "id": "fhCtRzUPA2BPg7vd",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -220,
+        180
+      ],
+      "id": "f87cc934-77ea-4ddf-b12d-49dc2f43bb1e",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "153llW1x4NdHB9INoG6FMORop8rUhgAUgco5vdh7IQ8w",
+          "mode": "list",
+          "cachedResultName": "sample_product_prices",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/153llW1x4NdHB9INoG6FMORop8rUhgAUgco5vdh7IQ8w/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1006348590,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/153llW1x4NdHB9INoG6FMORop8rUhgAUgco5vdh7IQ8w/edit#gid=1006348590"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -100,
+        180
+      ],
+      "id": "036e467b-a9fb-4731-80cb-b37a5f6a04d3",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "zy01j8Ky6oH7yMUj",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "153llW1x4NdHB9INoG6FMORop8rUhgAUgco5vdh7IQ8w",
+          "mode": "list",
+          "cachedResultName": "sample_product_prices",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/153llW1x4NdHB9INoG6FMORop8rUhgAUgco5vdh7IQ8w/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1006348590,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/153llW1x4NdHB9INoG6FMORop8rUhgAUgco5vdh7IQ8w/edit#gid=1006348590"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Product Name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Product_Name', ``, 'string') }}",
+            "Price (€)": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Price____', ``, 'string') }}",
+            "Quantity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Quantity', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Product Name"
+          ],
+          "schema": [
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Price (€)",
+              "displayName": "Price (€)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Quantity",
+              "displayName": "Quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        20,
+        180
+      ],
+      "id": "e3b9c4a7-d9ed-4aa9-8fd5-df0e633a3904",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "zy01j8Ky6oH7yMUj",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a3e79340-6eb0-4986-b6bd-aaf5bca7780c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f249b79f7a0d2e7abc727b6ba176f35ee1cacc7f3059a37c849864e6fc4fd024"
+  },
+  "id": "KA6L6texRSe8GNFZ",
+  "tags": []
+}
