@@ -1,5 +1,5 @@
 📦 Inventory-management-Agent
-An intelligent automation system built using n8n that streamlines inventory management by automatically tracking and updating product details such as name, price, and quantity. This project was independently designed and developed to demonstrate how low-code tools can solve real-world inventory problems efficiently.
+An intelligent automation system built using n8n that streamlines inventory management by automatically tracking and updating product details such as name, price, and quantity. This project was independently designed and developed to demonstrate how low-code tools can efficiently solve real-world inventory problems.
 
 🚀 Features
 🔄 Automated Inventory Updates: Tracks changes in stock levels without manual input.
@@ -41,4 +41,4 @@ Configure environment variables, credentials, and endpoints as needed
 Run the workflow and monitor the automation via your n8n dashboard.
 
 🤝 Contributions
-This is a solo-built project but feedback and suggestions are always welcome! Feel free to fork, open an issue, or propose a pull request.
+This is a solo-built project, but feedback and suggestions are always welcome! Feel free to fork, open an issue, or propose a pull request.
