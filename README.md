@@ -41,4 +41,5 @@ Configure environment variables, credentials, and endpoints as needed
 Run the workflow and monitor the automation via your n8n dashboard.
 
 🤝 Contributions
-This is a solo-built project, but feedback and suggestions are always welcome! Feel free to fork, open an issue, or propose a pull request.
+This is a solo-built project, but feedback and suggestions are always welcome!  
+Feel free to fork, open an issue, or propose a pull request.
