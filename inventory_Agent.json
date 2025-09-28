@@ -57,6 +57,7 @@
         }
       }
     },
+    
     {
       "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
