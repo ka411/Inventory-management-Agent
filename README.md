@@ -34,6 +34,7 @@ Automation enthusiasts exploring real-world use cases with n8n
 
 Developers wanting a customizable, ready-to-deploy inventory agent
 
+
 🔧 Getting Started
 Clone the repository
 
