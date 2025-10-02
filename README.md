@@ -10,6 +10,7 @@ An intelligent automation system built using n8n that streamlines inventory mana
 
 🔗 API Integration Ready: Supports easy connection to external services like CRMs, databases, or e-commerce platforms.
 
+
 🧰 Tech Stack
 n8n (core automation platform)
 
