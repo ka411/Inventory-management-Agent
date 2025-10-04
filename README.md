@@ -20,6 +20,7 @@ JavaScript Functions (for inline data handling)
 
 API Connections (customizable for external tools)
 
+
 👨‍💻 Developer Note
 This project was built entirely by me to apply my knowledge in automation, integration, and inventory management systems. It reflects my hands-on skills in using n8n, setting up data flows, optimizing trigger-based logic, and customizing workflows to meet specific operational needs.
 
